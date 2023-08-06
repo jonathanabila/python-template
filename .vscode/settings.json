@@ -1,0 +1,19 @@
+{
+  // Black
+  "python.formatting.provider": "black",
+  // Ruff
+  "ruff.enable": true,
+  "ruff.organizeImports": false,
+  "ruff.args": ["--ignore=I,I001,I002"],
+  // [Python] Editor
+  "[python]": {
+    "editor.rulers": [100],
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+      "source.fixAll.ruff": true
+    },
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.linting.enabled": true,
+  "editor.formatOnSave": true,
+}

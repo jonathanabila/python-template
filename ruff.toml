@@ -1,0 +1,59 @@
+select = [
+    # pycodestyle
+    "E",
+    "F",
+    # Flake8
+    "A", # Builtin
+    "B", # Bugbear
+    "FA", # flake8-annotations
+    "TRY", # tryceratops
+]
+
+#ignore = []
+
+# Everything is fixable by default
+fixable = ["ALL"]
+unfixable = [
+    # Make unused imports won't be autofixed.
+    "F401",
+]
+
+exclude = [
+    # Generic files
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+line-length = 100
+target-version = "py311"
+
+[per-file-ignores]
+"__init__.py" = ["E402", "F401"]
+
+# ------------------------- Third party ruff settings -------------------------
+[isort]
+extra-standard-library = ["pytest"]
+force-sort-within-sections = true
+
+# Allow us to migrate the code base to use annotations.
+[flake8-annotations]
+ignore-fully-untyped = true
